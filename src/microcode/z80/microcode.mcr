@@ -17,7 +17,7 @@ LD_(BC)_A: # 02
 	store_lo , inc+fetch
 
 INC_BC: # 03
-	inc+fetch
+	INC BC
 
 INC_B: # 04
 	INC B
@@ -27,6 +27,9 @@ DEC_B: # 05
 
 LD_B_n: # 06
 	LD_R_n B
+
+DEC_BC: # 0B
+	DEC BC
 
 INC_C: # 0C
 	INC C
@@ -56,6 +59,9 @@ LD_(DE)_A: # 12
 	A > MBR
 	store_lo , inc+fetch
 
+INC_DE: # 13
+	INC DE
+
 INC_D: # 14
 	INC D
 
@@ -64,6 +70,9 @@ DEC_D: # 15
 
 LD_D_n: # 16
 	LD_R_n D
+
+DEC_DE: # 1B
+	DEC DE
 
 INC_E: # 1C
 	INC E
@@ -100,6 +109,9 @@ LD_(nn)_HL: # 22
 	store_lo
 	store_hi 1 , inc+fetch
 
+INC_HL: # 23
+	INC HL
+
 INC_H: # 24
 	INC H
 
@@ -108,6 +120,9 @@ DEC_H: # 25
 
 LD_H_n: # 26
 	LD_R_n H
+
+DEC_HL: # 2B
+	DEC HL
 
 INC_L: # 2C
 	INC L
@@ -133,14 +148,20 @@ LD_(nn)_A: # 32
 	A > MBR
 	store_lo , inc+fetch
 
-LD_A_n: # 33
-	LD_R_n A
+INC_SP: # 3e
+	INC SP
+
+DEC_SP: # 3B
+	DEC SP
 
 INC_A: # 3C
 	INC A
 
 DEC_A: # 3D
 	DEC A
+
+LD_A_n: # 3E
+	LD_R_n A
 
 LD_R_R B # 40
 

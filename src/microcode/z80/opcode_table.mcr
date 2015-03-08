@@ -21,7 +21,7 @@
 0a:
     jmp NOP
 0b:
-    jmp NOP
+    jmp DEC_BC
 0c:
     jmp INC_C
 0d:
@@ -37,7 +37,7 @@
 12:
     jmp LD_(DE)_A
 13:
-    jmp NOP
+    jmp INC_DE
 14:
     jmp INC_D
 15:
@@ -53,7 +53,7 @@
 1a:
     jmp NOP
 1b:
-    jmp NOP
+    jmp DEC_DE
 1c:
     jmp INC_E
 1d:
@@ -69,7 +69,7 @@
 22:
     jmp LD_(nn)_HL
 23:
-    jmp NOP
+    jmp INC_HL
 24:
     jmp INC_H
 25:
@@ -85,7 +85,7 @@
 2a:
     jmp NOP
 2b:
-    jmp NOP
+    jmp DEC_HL
 2c:
     jmp INC_L
 2d:
@@ -101,7 +101,7 @@
 32:
     jmp LD_(nn)_A
 33:
-    jmp NOP
+    jmp INC_SP
 34:
     jmp NOP
 35:
@@ -117,7 +117,7 @@
 3a:
     jmp NOP
 3b:
-    jmp NOP
+    jmp DEC_SP
 3c:
     jmp INC_A
 3d:

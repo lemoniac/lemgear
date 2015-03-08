@@ -133,7 +133,7 @@ def parse(filename):
 						uop.immediate = int(instr[1])
 				elif instr[0] == "inc_pc":
 					uop.inc_pc = True
-				elif len(instr) == 3 and instr[1] == ">":
+				elif len(instr) >= 3 and instr[1] == ">":
 					reg_in = None
 					size_in = Size.All
 					from_Z = False
