@@ -3,7 +3,7 @@
 .end
 
 .macro DEC
-.	$0 > X , dec Z > $0 , inc_pc , jmp FETCH
+.	$0 > X , dec , Z > $0 , inc_pc , jmp FETCH
 .end
 
 .macro INC

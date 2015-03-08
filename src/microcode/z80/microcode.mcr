@@ -217,11 +217,9 @@ RET: # C9
 CALL: # CD
 	inc_pc
 	PC > ADDR
-	load_lo
-	inc_pc
+	load_lo , inc_pc
 	PC > ADDR
-	load_hi
-	inc_pc
+	load_hi , inc_pc
 	MBR > INSTR  # !!!
 	PUSH_R PC
 	INSTR > PC # !!!
@@ -318,11 +316,10 @@ EI: # FB
 	inc+fetch
 
 CP_n: # FE
-	inc_pc , A > X
+	inc_pc
 	PC > ADDR
 	load
-	MBR > Y
-	sub
+	A > X , MBR > Y , sub
 
 	inc+fetch
 
