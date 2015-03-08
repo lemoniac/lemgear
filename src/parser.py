@@ -4,6 +4,7 @@ from common import *
 from microinstr import MicroInstr
 
 def parse(filename):
+	base_path = filename[:filename.rfind("/")+1]
 	# read file, split in lines and remove empty lines
 	microcode_ascii = [ line for line in [ line.strip() for line in file(filename).read().split('\n') ] if line != "" ]
 
@@ -11,7 +12,7 @@ def parse(filename):
 	out = []
 	for line in microcode_ascii:
 		if line.startswith(".include"):
-			filename = line.split()[1]
+			filename = base_path + line.split()[1]
 			included_file = [ line for line in [ line.strip() for line in file(filename).read().split('\n') ] if line != "" ]
 			for l in included_file:
 				out.append(l)
