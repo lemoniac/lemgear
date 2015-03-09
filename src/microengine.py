@@ -167,8 +167,15 @@ def run(memory):
 				if mi.carry:
 					result -= 1
 				flag_s = True
-				
+
 			flag_z = result == 0
+			
+			if result > 0xffff:
+				flag_c = True
+				result &= 0xffff
+			else:
+				flag_c = False
+			
 			if mi.out != None:
 				if mi.size_out == Size.All:
 					regs[mi.out] = result
@@ -211,6 +218,11 @@ def run(memory):
 		if mi.jmp_cond == "Z" and flag_z:
 			cond = True
 		elif mi.jmp_cond == "NZ" and not flag_z:
+			cond = True
+
+		if mi.jmp_cond == "C" and flag_c:
+			cond = True
+		elif mi.jmp_cond == "NC" and not flag_c:
 			cond = True
 
 		if mi.jmp:

@@ -100,12 +100,9 @@ def parse(filename):
 				elif instr[0] == "jmp_rel_instr":
 					uop.jmp_instr = True
 					uop.jmp_rel = True
-				elif instr[0] == "jmp_z":
+				elif instr[0].startswith("jmp_"):
 					uop.jmp = labels[instr[1]]
-					uop.jmp_cond = "Z"
-				elif instr[0] == "jmp_nz":
-					uop.jmp = labels[instr[1]]
-					uop.jmp_cond = "NZ"
+					uop.jmp_cond = instr[0][instr[0].find("_")+1:].upper()
 				elif instr[0] == "load":
 					uop.load = True
 					uop.size_out = Size.All

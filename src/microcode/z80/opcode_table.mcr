@@ -79,7 +79,7 @@
 27:
     jmp NOP
 28:
-    jmp NOP
+    jmp JR_Z_e
 29:
     jmp NOP
 2a:
@@ -95,7 +95,7 @@
 2f:
     jmp NOP
 30:
-    jmp NOP
+    jmp JR_NC_e
 31:
     jmp LD_SP_nn
 32:
@@ -111,7 +111,7 @@
 37:
     jmp NOP
 38:
-    jmp NOP
+    jmp JR_C_e
 39:
     jmp NOP
 3a:

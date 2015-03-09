@@ -121,6 +121,18 @@ DEC_H: # 25
 LD_H_n: # 26
 	LD_R_n H
 
+JR_Z_e: # 28
+	inc_pc , jmp_nz JR_Z_e_no_jmp
+
+	PC > ADDR , load
+
+	PC > X , MBR > Y , add 8 , Z > PC
+
+	inc+fetch
+
+JR_Z_e_no_jmp:
+	inc+fetch
+
 DEC_HL: # 2B
 	DEC HL
 
@@ -132,6 +144,18 @@ DEC_L: # 2D
 
 LD_L_n: # 2E
 	LD_R_n L
+
+JR_NC_e: # 30
+	inc_pc , jmp_c JR_NC_e_no_jmp
+
+	PC > ADDR , load
+
+	PC > X , MBR > Y , add 8 , Z > PC
+
+	inc+fetch
+
+JR_NC_e_no_jmp:
+	inc+fetch
 
 LD_SP_nn: # 31
 	LD_R16_nn SP
@@ -147,6 +171,18 @@ LD_(nn)_A: # 32
 
 	A > MBR
 	store_lo , inc+fetch
+
+JR_C_e: # 38
+	inc_pc , jmp_nc JR_C_e_no_jmp
+
+	PC > ADDR , load
+
+	PC > X , MBR > Y , add 8 , Z > PC
+
+	inc+fetch
+
+JR_C_e_no_jmp:
+	inc+fetch
 
 INC_SP: # 3e
 	INC SP
