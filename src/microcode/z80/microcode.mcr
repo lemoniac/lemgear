@@ -184,6 +184,18 @@ JR_C_e: # 38
 JR_C_e_no_jmp:
 	inc+fetch
 
+LD_A_(nn): # 3A
+	inc_pc
+	PC > ADDR
+	load_lo
+	inc_pc
+	PC > ADDR
+	load_hi
+	MBR > ADDR
+	load
+
+	MBR > A , inc+fetch
+
 INC_SP: # 3e
 	INC SP
 

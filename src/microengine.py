@@ -244,3 +244,7 @@ def run(memory):
 
 run(memory)
 
+for i in xrange(rom_len):
+	print format(memory.read(i), "02X"),
+print
+

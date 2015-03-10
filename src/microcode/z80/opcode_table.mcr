@@ -115,7 +115,7 @@
 39:
     jmp NOP
 3a:
-    jmp NOP
+    jmp LD_A_(nn)
 3b:
     jmp DEC_SP
 3c:
