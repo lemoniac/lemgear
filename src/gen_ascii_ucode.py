@@ -1,11 +1,9 @@
 #!/usr/bin/python
 
-from microinstr import MicroInstr
 from parser import parse
-from common import *
 
-(microcode, labels, rlabels) = parse("microcode")
+(microcode, labels, rlabels) = parse("microcode/z80/microcode.mcr")
 
 for mi in microcode:
-	print mi.toAscii()
+    print mi.to_ascii()
 
