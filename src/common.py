@@ -1,4 +1,4 @@
-alu_ops = ["add", "sub", "inc", "dec", "and", "or", "xor"]
+alu_ops = ["add", "sub", "inc", "dec", "and", "or", "xor", "shr", "shl"]
 
 reg_names = ["PC", "INSTR", "ADDR", "MBR", "AF", "BC", "DE", "HL", "SP"]
 

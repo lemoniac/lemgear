@@ -161,6 +161,14 @@ def run(memory):
                 if mi.carry:
                     result -= 1
                 flag_s = True
+            elif mi.alu == "shl":
+                result = x << 1
+                if mi.carry:
+                    result |= flag_c
+            elif mi.alu == "shr":
+                result = x >> 1
+                if mi.carry:
+                    result |= flag_c << 7
 
             flag_z = result == 0
             

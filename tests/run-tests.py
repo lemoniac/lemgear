@@ -23,10 +23,11 @@ try:
 		[regs, mem] = subprocess.check_output(cmd).split("\n")[-3:-1]
 		for res in expected:
 			res = res.strip()
-			if regs.find(res) >= 0:
+			if regs.find(res) < 0:
 				print "Test '" + test + "' failed"
 				print res
 				print regs
 				print mem
 finally:
 	os.chdir(cwd)
+
