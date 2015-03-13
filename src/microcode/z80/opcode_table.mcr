@@ -15,7 +15,7 @@
 07:
     jmp NOP
 08:
-    jmp NOP
+    jmp EX_AF_AFs
 09:
     jmp NOP
 0a:
@@ -433,7 +433,7 @@ d7:
 d8:
     jmp NOP
 d9:
-    jmp NOP
+    jmp EXX
 da:
     jmp NOP
 db:
@@ -469,7 +469,7 @@ e9:
 ea:
     jmp NOP
 eb:
-    jmp NOP
+    jmp EX_DE_HL
 ec:
     jmp NOP
 ed:

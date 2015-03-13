@@ -82,3 +82,9 @@
 .	SP > X , 2 > Y , add , Z > SP
 .end
 
+.macro SWAP
+.	$0 > TMP
+.	$1 > $0
+.	TMP > $1
+.end
+

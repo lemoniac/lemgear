@@ -1,6 +1,6 @@
 alu_ops = ["add", "sub", "inc", "dec", "and", "or", "xor", "shr", "shl"]
 
-reg_names = ["PC", "INSTR", "ADDR", "MBR", "AF", "BC", "DE", "HL", "SP"]
+reg_names = ["PC", "INSTR", "ADDR", "MBR", "AF", "BC", "DE", "HL", "SP", "IX", "IY", "AFs", "BCs", "DEs", "HLs", "TMP"]
 
 regs = [0 for i in xrange(len(reg_names))]
 
@@ -13,6 +13,13 @@ BC = 5
 DE = 6
 HL = 7
 SP = 8
+IX = 9
+IY = 10
+AFs = 11
+BCs = 12
+DEs = 13
+HLs = 14
+TMP = 15
 
 class Size:
 	All = 1

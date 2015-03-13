@@ -28,6 +28,10 @@ DEC_B: # 05
 LD_B_n: # 06
 	LD_R_n B
 
+EX_AF_AFs: # 08
+	SWAP AF AFs
+	inc+fetch
+
 DEC_BC: # 0B
 	DEC BC
 
@@ -311,6 +315,12 @@ PUSH_DE: # D5
 	PUSH_R DE
 	inc+fetch
 
+EXX: # D9
+	SWAP BC BCs
+	SWAP DE DEs
+	SWAP HL HLs
+	inc+fetch
+
 INA: # DB
 	inc_pc
 	load
@@ -326,6 +336,10 @@ POP_HL: # E1
 
 PUSH_HL: # E5
 	PUSH_R HL
+	inc+fetch
+
+EX_DE_HL: # EB
+	SWAP DE HL
 	inc+fetch
 
 prefix_ED:
