@@ -107,7 +107,7 @@
 35:
     jmp NOP
 36:
-    jmp NOP
+    jmp LD_(HL)_n
 37:
     jmp NOP
 38:
@@ -367,21 +367,21 @@ b6:
 b7:
     jmp NOP
 b8:
-    jmp NOP
+    jmp CP_B
 b9:
-    jmp NOP
+    jmp CP_C
 ba:
-    jmp NOP
+    jmp CP_D
 bb:
-    jmp NOP
+    jmp CP_E
 bc:
-    jmp NOP
+    jmp CP_H
 bd:
-    jmp NOP
+    jmp CP_L
 be:
-    jmp NOP
+    jmp CP_(HL)
 bf:
-    jmp NOP
+    jmp CP_A
 c0:
     jmp NOP
 c1:

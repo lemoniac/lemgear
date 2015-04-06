@@ -141,7 +141,7 @@ ED_45:
 ED_46:
     jmp NOP
 ED_47:
-    jmp NOP
+    jmp LD_I_A
 ED_48:
     jmp NOP
 ED_49:

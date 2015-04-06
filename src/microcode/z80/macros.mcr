@@ -58,6 +58,7 @@
 .$0_H:
 .	A > X , H > Y , $1 , Z > A , inc_pc , jmp FETCH
 .$0_L:
+.	A > X , L > Y , $1 , Z > A , inc_pc , jmp FETCH
 .$0_(HL):
 .	jmp $0
 .$0_A:
@@ -65,6 +66,28 @@
 .$0:
 .	inc_pc , jmp FETCH
 .end
+
+.macro CP_R
+.CP_B:
+.	A > X , B > Y , sub , inc_pc , jmp FETCH
+.CP_C:
+.	A > X , C > Y , sub , inc_pc , jmp FETCH
+.CP_D:
+.	A > X , D > Y , sub , inc_pc , jmp FETCH
+.CP_E:
+.	A > X , E > Y , sub , inc_pc , jmp FETCH
+.CP_H:
+.	A > X , H > Y , sub , inc_pc , jmp FETCH
+.CP_L:
+.	A > X , L > Y , sub , inc_pc , jmp FETCH
+.CP_(HL):
+.	jmp CP
+.CP_A:
+.	A > X , A > Y , sub , inc_pc , jmp FETCH
+.CP:
+.	inc_pc , jmp FETCH
+.end
+
 
 .macro PUSH_R
 .	SP > ADDR

@@ -176,6 +176,13 @@ LD_(nn)_A: # 32
 	A > MBR
 	store_lo , inc+fetch
 
+LD_(HL)_n: # 36
+	inc_pc
+	PC > ADDR
+	load
+	HL > ADDR
+	store_lo , inc_pc , jmp FETCH
+
 JR_C_e: # 38
 	inc_pc , jmp_nc JR_C_e_no_jmp
 
@@ -266,6 +273,8 @@ ALU_OP XOR xor # A8-AF
 
 ALU_OP OR or # B0-B7
 
+CP_R # B8-BF
+
 POP_BC: # C1
 	POP_R BC
 	inc+fetch
@@ -353,6 +362,9 @@ prefix_ED:
 	.include ed_prefix.mcr
 	
 	jmp FETCH
+
+LD_I_A: # ED 47
+    A > I , inc_pc , jmp FETCH
 
 LDIR: # ED B0
 	HL > ADDR

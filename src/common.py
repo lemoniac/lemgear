@@ -1,6 +1,6 @@
 alu_ops = ["add", "sub", "inc", "dec", "and", "or", "xor", "shr", "shl"]
 
-reg_names = ["PC", "INSTR", "ADDR", "MBR", "AF", "BC", "DE", "HL", "SP", "IX", "IY", "AFs", "BCs", "DEs", "HLs", "TMP"]
+reg_names = ["PC", "INSTR", "ADDR", "MBR", "AF", "BC", "DE", "HL", "SP", "IX", "IY", "IR", "AFs", "BCs", "DEs", "HLs", "TMP"]
 
 regs = [0 for i in xrange(len(reg_names))]
 
@@ -15,11 +15,12 @@ HL = 7
 SP = 8
 IX = 9
 IY = 10
-AFs = 11
-BCs = 12
-DEs = 13
-HLs = 14
-TMP = 15
+IR = 11
+AFs = 12
+BCs = 13
+DEs = 14
+HLs = 15
+TMP = 16
 
 class Size:
 	All = 1
@@ -35,6 +36,8 @@ reg_map = {
 	"E" : ("DE", Size.Low),
 	"H" : ("HL", Size.High),
 	"L" : ("HL", Size.Low),
+	"I" : ("IR", Size.High),
+	"R" : ("IR", Size.Low),
 	}
 
 def get_reg(r, size):
